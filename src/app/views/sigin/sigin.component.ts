@@ -23,7 +23,7 @@ export class SiginComponent implements OnInit {
   submit(): void {
     console.log(this.form.getRawValue());
     this.http
-      .post('http://127.0.0.1:8000', this.form.getRawValue())
+      .post('http://127.0.0.1:8000/api/register', this.form.getRawValue())
       .subscribe((res) => {
         console.log(res);
       });
