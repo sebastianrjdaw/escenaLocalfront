@@ -5,11 +5,11 @@
     <!-- <a href="index.html" class="logo"
       ><img src="assets/img/logo.png" alt="" class="img-fluid"
     /></a> -->
-    <h1 class="logo"><a href="index.html">tuEscenaLocal</a></h1>
+    <h1 class="logo "><a href="index.html">tuEscenaLocal</a></h1>
 
     <nav id="navbar" class="navbar">
       <ul>
-        <li><a class="nav-link scrollto active" href="#">Perfil</a></li>
+        
         <li><a class="nav-link scrollto" href="#">Artistas</a></li>
         <li><a class="nav-link scrollto" href="#">Salas</a></li>
         <li><a class="nav-link scrollto" href="#">Eventos</a></li>
@@ -22,7 +22,20 @@
             <li><a href="#">Reportar un Error</a></li>
           </ul>
         </li>
-        <li><a class="getstarted scrollto" href="#">Iniciar Sesión</a></li>
+        <ng-container *ngIf="!authenticated">
+          <li><a class="getstarted scrollto" [routerLink]="['/login']">Iniciar Sesión</a></li>
+        </ng-container>
+        <ng-container *ngIf="authenticated">
+          <li class="dropdown">
+            <a href="#"
+              ><span>Perfil</span> <i class="bi bi-chevron-down"></i
+            ></a>
+            <ul>
+              <li><a class="nav-link scrollto " [routerLink]="['/profile']">Perfil</a></li>
+              <li><a (click)="logOut()">Cerrar Sesión</a></li>
+            </ul>
+          </li>
+        </ng-container>
       </ul>
       <i class="bi bi-list mobile-nav-toggle"></i>
     </nav>
