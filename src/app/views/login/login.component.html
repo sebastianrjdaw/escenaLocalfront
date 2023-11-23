@@ -28,7 +28,7 @@
                     class="form-control form-control-lg"
                   />
                   <label class="form-label" for="typeEmailX">Email</label>
-                  
+
                 </div>
                 <div class="form-outline form-white mb-4">
                   <div class="text-aviso" *ngIf="form.get('password')?.hasError('required') && form.get('password')?.touched">
@@ -44,7 +44,7 @@
                     class="form-control form-control-lg"
                   />
                   <label class="form-label" for="typePasswordX">Contraseña</label>
-                  
+
                 </div>
                 <button class="btn btn-outline-light btn-lg px-5" type="submit">
                   Iniciar Sesión
@@ -55,7 +55,7 @@
             <div>
               <p class="mb-0">
                 No tienes una cuenta?
-                <a href="#!" class="text-white-50 fw-bold">Registrarse</a>
+                <a [routerLink]="['/sigin']" class="text-white-50 fw-bold">Registrarse</a>
               </p>
             </div>
           </div>
